@@ -1,0 +1,39 @@
+
+
+CREATE COMPUTE MODULE createOrderReqmessage
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		 CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		-- SET OutputRoot.HTTPInputHeader = null;
+		DECLARE mybroker, myQueueManager CHARACTER;
+		SET mybroker = BrokerName;
+		SET myQueueManager = QueueManagerName;		
+		SET OutputRoot.MQMD.ReplyToQMgr = myQueueManager;
+		SET OutputRoot.MQMD.ReplyToQ = 'QUEUE.OUT';
+		
+		SET OutputRoot.XMLNSC.OrderReq.Header.ISDetails.Brokername 	= mybroker;		 
+		SET OutputRoot.XMLNSC.OrderReq.Header.ISDetails.QMname		= myQueueManager;
+		
+			
+		SET OutputRoot.XMLNSC.OrderReq.OrderDetails.ItemID		= '1001';
+		SET OutputRoot.XMLNSC.OrderReq.OrderDetails.ItemName 	= 'Pen';
+		SET OutputRoot.XMLNSC.OrderReq.OrderDetails.Description = 'Its a pen used for writing';
+		SET OutputRoot.XMLNSC.OrderReq.HTTPIden=	CAST(InputLocalEnvironment.Destination.HTTP.RequestIdentifier AS CHAR);
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

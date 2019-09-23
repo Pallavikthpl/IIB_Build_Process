@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessagePool xmlns="http://wwww.ibm.com/iib/test/1.0.0">
+    <MQInputMessage timestamp="1557300722381" nodeId="FCMComposite_1_1" name="new message 1" id="1557300722381-84">
+        <plainText>%3COderRq%3E%3Citem%3E1001%3C%2Fitem%3E%3Cname%3EOwner%3C%2Fname%3E%3CDescription%3EIts+a+pen+used+for+writing%3C%2FDescription%3E%3CSourceBrokerName%3ETest%3C%2FSourceBrokerName%3E%3CSourceQMName%3EQM3%3C%2FSourceQMName%3E%3CHTTPIden%3EX%26apos%3B485454500000000000000000d9b24f96b467000000000000%26apos%3B%3C%2FHTTPIden%3E%3C%2FOderRq%3E</plainText>
+        <MessageHeader backoutCount="0" characterSet="0" encoding="0" expiry="-1" feedback="0" messageFlags="0" messageType="8" messageSequenceNumber="1" offset="0" originalLength="-1" persistence="2" priority="-1" putApplicationType="0" report="0"/>
+    </MQInputMessage>
+</MessagePool>
