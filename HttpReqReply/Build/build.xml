@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="IIB_Build_Process" default="build">
 <property file = "build.properties" />
-<property name = "datadir" value="../../" />
+<property name = "datadir" value="C:\\Users\\PallaviKathpalia\\IBM\\IIBT10\\workspace_New\\IIB_Build_Process\\HttpReqReply" />
 
     <target name="build">
      <echo message="Building the Message Broker Project @ ${data.dir}" />
