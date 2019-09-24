@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IIB_Build_Process" default="build">
+<property file = "build.properties" />
+<property name = "datadir" value="../../" />
+
+    <target name="build">
+     <echo message="Building the Message Broker Project @ ${data.dir}" />
+      
+     <exec executable="${iib.toolkit}/mqsicreatebar" >
+        <arg value="-data" />
+        <arg value="${data.dir}" /> 
+        <arg value="-b" />
+        <arg value="${bar.name}" />
+        <!-- List all the message flow projects -->
+        <arg value="-a" />
+        <arg value="appname" />
+		<arg value="deployAsSource" />
+             <arg value="" />          
+
+     </exec>
+	 <echo message="Bar builded..." />
+	 <echo message="Deploying bar..." />
+	 <exec executable="deploycmd.bat" >
+		<arg value="${iib.broker}" />
+        <arg value="${iib.server}" /> 
+        <arg value="${bar.name}" />
+	</exec>
+		<echo message="Bar file deployed.."/>
+  </target>
+</project>
