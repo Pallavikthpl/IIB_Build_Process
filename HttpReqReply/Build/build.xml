@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Ant_WMB_First" default="run">
+<project name="IIB_Build_Process" default="run">
 
  <target name="run" description="">
   <property name="toolkit.home" value="C:\Program Files\IBM\IIB\10.0.0.12"/>
