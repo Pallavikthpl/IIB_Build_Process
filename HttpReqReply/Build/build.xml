@@ -6,7 +6,7 @@
     <target name="build">
      <echo message="Building the Message Broker Project @ ${data.dir}" />
       
-     <exec executable="${iib.toolkit}/mqsicreatebar" >
+     <exec executable="${iib.toolkit}\mqsicreatebar.exe" >
         <arg value="-data" />
         <arg value="${data.dir}" /> 
         <arg value="-b" />
