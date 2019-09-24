@@ -14,7 +14,7 @@
         <!-- List all the message flow projects -->
         <arg value="-a" />
         <arg value="appname" />
-		<arg value="deployAsSource" />
+		<arg value="-deployAsSource" />
              <arg value="" />          
 
      </exec>
