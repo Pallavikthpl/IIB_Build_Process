@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	environment
+	{
+	ant_build = "https://github.com/Pallavikthpl/IIB_Build_Process/tree/master/HttpReqReply/Build/build.xml"
+	}
     stages {
 	    
         stage('Build') { 
@@ -19,6 +23,15 @@ pipeline {
         }
 		}
 		}
+	  stage('Build') {
+		steps
+		{
+		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
+		// some block
+		bat "ant -f ${ant_build}"
+		}
+		}
+	}
         stage('Deploy') {
                 
             steps {
