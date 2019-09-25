@@ -35,11 +35,11 @@ pipeline {
 	    stage('upload') {
 		steps {
 		script {
-			def server = Artifactory.server 'frogArtifactory'
+			def server = Artifactory.server 'JfrogArtifactory'
 			def uploadSpec = """{
 			"files": [{
-			"pattern": "C:/Apurva/Bars/",
-			"target": "SampleRepo"
+			"pattern": "C:/Users/PallaviKathpalia/IBM/IIBT10/workspace_New/IIB_Build_Process",
+			"target": "artifactory-build-info"
 			}]
 			}"""
  
