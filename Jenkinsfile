@@ -26,7 +26,7 @@ pipeline {
 	  stage('Build') {
 		steps
 		{
-		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
+		withAnt(installation: 'apache-ant-1.9.14', jdk: 'jdk-12.0.1'){
 		// some block
 		bat "ant -f ${ant_build}"
 		}
