@@ -39,7 +39,7 @@ pipeline {
 			def uploadSpec = """{
 			"files": [{
 			"pattern": "C:/Users/PallaviKathpalia/IBM/IIBT10/workspace_New/IIB_Build_Process",
-			"target": "artifactory-build-info"
+			"target": "jenkins"
 			}]
 			}"""
  
