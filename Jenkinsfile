@@ -6,7 +6,7 @@ pipeline {
 	}
     stages {
 	    
-        stage('Build') { 
+        stage('Checkout') { 
             
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Pallavikthpl/IIB_Build_Process.git']]])
