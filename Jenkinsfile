@@ -2,7 +2,7 @@ pipeline {
     agent any
 	environment
 	{
-	ant_build = "C:\Users\PallaviKathpalia\IBM\IIBT10\workspace_New\IIB_Build_Process\HttpReqReply\Build\build.xml"
+	ant_build = "C:\\Users\\PallaviKathpalia\\IBM\\IIBT10\\workspace_New\\IIB_Build_Process\\HttpReqReply\\Build\\build.xml"
 	}
     stages {
 	    
