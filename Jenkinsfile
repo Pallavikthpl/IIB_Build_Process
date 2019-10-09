@@ -38,7 +38,7 @@ pipeline {
 			def server = Artifactory.server 'JfrogArtifactory'
 			def uploadSpec = """{
 			"files": [{
-			"pattern": "C:/Users/PallaviKathpalia/IBM/IIBT10/workspace_New/IIB_Build_Process",
+			"pattern": "C:/Users/PallaviKathpalia/IBM/IIBT10/workspace_New/IIB_Build_Process/",
 			"target": "jenkins"
 			}]
 			}"""
