@@ -52,7 +52,7 @@ pipeline {
 steps{
 step([$class: 'UCDeployPublisher',
 component: [componentName: 'IIB_Bar_Deploy', componentTag: '',
-delivery: [$class: 'Push', baseDir: 'C:\\Users\\PallaviKathpalia\\JenkinsUCD', fileExcludePatterns: '', fileIncludePatterns: '*.bar', pushDescription: '', pushIncremental: false, pushProperties: '', pushVersion: '${BUILD_NUMBER}']],
+delivery: [$class: 'Push', baseDir: '/home/pallavi/UCD', fileExcludePatterns: '', fileIncludePatterns: '*.bar', pushDescription: '', pushIncremental: false, pushProperties: '', pushVersion: '${BUILD_NUMBER}']],
 deploy: [deployApp: 'IIB_Deployment', deployDesc: 'Requested from Jenkins', deployEnv: 'IIB_Environment', deployOnlyChanged: false, deployProc: 'IIB_BAR_DEPLOY_PROCESS', deployReqProps: '', deployVersions: 'IIB_Bar_Deploy:${BUILD_NUMBER}', skipWait: false], siteName: 'UDeploy-server'])
  
 }
