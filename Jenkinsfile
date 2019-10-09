@@ -47,6 +47,16 @@ pipeline {
 			}
 		}
 		}
+	    stage('UCD deploy')
+{
+steps{
+step([$class: 'UCDeployPublisher',
+component: [componentName: 'IIBComp', componentTag: '',
+delivery: [$class: 'Push', baseDir: 'C:\\Users\\PallaviKathpalia\\JenkinsUCD', fileExcludePatterns: '', fileIncludePatterns: '*.bar', pushDescription: '', pushIncremental: false, pushProperties: '', pushVersion: '${BUILD_NUMBER}']],
+deploy: [deployApp: 'IIBDeploy', deployDesc: 'Requested from Jenkins', deployEnv: 'IIBEnv', deployOnlyChanged: false, deployProc: 'IIBDeployAppProcess', deployReqProps: '', deployVersions: 'IIBComp:${BUILD_NUMBER}', skipWait: false], siteName: 'UcdServer'])
+ 
+}
+}
         stage('Deploy') {
                 
             steps {
